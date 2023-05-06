@@ -5,6 +5,7 @@
     height: 100vh;
     background-color: #000;
     position: relative;
+    overflow: hidden;
 }
 #visual > article {
     width: 100%;
@@ -29,7 +30,7 @@
     left: -5px;
     font-size: 14px;
 }
-.slide-logo {
+.visual-logo {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -37,6 +38,468 @@
     height: 33%;
 }
 
+#visual_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80px;
+    transition: .3s;
+}
+#visual_btn > img {
+    width: 100%;
+    height: 103%;
+    transition: .3s;
+}
+#visual_btn:hover {
+    transform: translateX(-3px);
+}
+#visual_btn:hover > img {
+    transform: scaleX(1.5);
+}
+#visual_btn > span {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,50%) rotate(90deg);
+    color: #fff;
+    display: block;
+    word-break: keep-all;
+    word-wrap: unset;
+    width: 100vh;
+    text-align: center;
+}
+
+/* 분양단지 */
+#main-apt {
+    width: 70vw;
+    margin: 100px auto;
+}
+#main-apt > h1 {
+    /* color: #1a2f49; */
+    color: #333;
+    font-size: 75px;
+    font-weight: 100;
+}
+
+.apt-search {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.search-tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.search-word {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 300px;
+    margin-right: 21px;
+}
+.search-word > input {
+    padding: 4px 12px;
+    flex: 1;
+    font-size: 16px;
+}
+.search-condition {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 27px;
+}
+.search-condition > button {
+    height: 100%;
+    margin: 0 4px;
+    border: 1px solid #001140;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 27px;
+    padding: 4px 6px;
+}
+.search-condition > button:first-child {
+    border-color: rgba(0, 17, 64, .5);
+}
+.search-condition > button > span {
+    color: #001140;
+    margin-left: 21px;
+    font-weight: bold;
+}
+.search-condition > button.filter {
+    background-image: url('../img/search_filter.png');
+    background-position: 6px center;
+    background-size: 12px auto;
+    background-repeat: no-repeat;
+}
+.search-condition > button.filter-active {
+    background-color: #001140;
+    background-image: url('../img/search_filter_active.png');
+}
+.search-condition > button.filter-active > span {
+    color: #fff;
+}
+.search-condition > button.search-switch {
+    opacity: .3;
+}
+.search-condition > button.search-switch.active {
+    opacity: 1;
+    border-width: 1.3px;
+}
+.search-area {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #d5d5d5;
+    margin: 30px auto;
+}
+.search-area > li {
+    flex: 1;
+    border-right: 1px solid #d5d5d5;
+    color: #5d5d5d;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.search-area > li:last-child {
+    border-right: none;
+}
+.search-area > li.active {
+    color: #fff;
+    background-color: #1a2f49;
+}
+/* 상세조건 검색 */
+#hamburger-search {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+    width: 95vw;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-area-sub {
+    width: 70vw;
+    margin-top: 21px;
+}
+#hamburger-search > button {
+    background-color: #001140;
+    color: #fff;
+    font-size: 16px;
+    color: #fff;
+    padding: 12px 35px;
+    margin: 30px auto;
+}
+.search-area-sub > ul {
+    border: 1px solid #d5d5d5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.search-area-sub > ul > li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    padding: 4px 4px 4px 0px;
+}
+
+.search-area-sub > ul > li:first-child{
+    padding: 4px;
+}
+.search-area-sub > ul > li:not(:last-child)::after {
+    content: '';
+    border-right: 1px solid #d5d5d5;
+    width: 5px;
+    height: 15px;
+    top: 50%;
+    display: block;
+}
+.search-area-sub > ul > li > button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #5d5d5d;
+    font-weight: bold;
+    font-size: 12px;
+}
+.search-area-sub > ul > li > button > span {
+    color : #1f5ca8;
+}
+.search-area-sub > ul  > li > button.active {
+    background-color: #001140;
+    color: #fff;
+}
+.search-area-sub > ul > li > button.active > span {
+    color: #fff;
+}
+.search-sub-category:not(:last-child) {
+    border-bottom: none;
+}
+.search-sub-category > li {
+    width: 10%;
+}
+
+/* 분양단지 - 갤러리  */
+.apt-gallery {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.apt-gallery-box  {
+    width: 32%;
+    border: 1px solid #909090;
+    margin: 12px 0;
+    overflow: hidden;
+    position: relative;
+}
+.apt-gallery-box > button {
+    transition: .3s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #17457dc4;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between;
+    padding: 100px 50px;
+    opacity: 0;
+}
+.apt-gallery-box > button > span {
+    color: #fff;
+}
+.apt-gallery-box > button > span.apt-btn-detail {
+    border: 1px solid #fff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+.apt-gallery-box > button > span.apt-btn-title {
+    font-size: 21px;
+    font-weight: bold;
+}
+.apt-gallery-box:hover > button {
+    opacity: 1;
+}
+.apt-gallery-box:nth-of-type(3n-1) {
+    margin: 12px 2%;
+}
+.gallery-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 21px;
+}
+.gallery-img > img {
+    width: 100%;
+    height: 100%;
+}
+.apt-gallery-box > p {
+    margin: 12px 21px;
+    color: #17457d;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    align-items: center;
+}
+.apt-gallery-box > p > span {
+    border: 1px solid #17457d;
+    font-size: 12px;
+    padding: 3px 12px;
+    margin-right: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+.apt-gallery-box > h1 {
+    margin: 0 21px;
+    font-weight: 900;
+}
+.apt-gallery-sub {
+    padding: 21px;
+}
+.apt-gallery-sub > div {
+    display: flex;
+    flex-direction: row;
+    margin: 6px auto;
+}
+.apt-gallery-sub >div> span {
+    width: 30%;
+    font-size: 12px;
+    color: #383757;
+    font-weight: bold;
+}
+.apt-gallery-sub >div> p {
+    flex: 1;
+    font-size: 12px;
+    line-height: 1.4;
+}
+.apt-btn-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.apt-btn-box > button {
+    border: 1px solid #1a2f49;
+    border-radius: 21px;
+    padding: 6px 21px;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 12px;
+}
+/* 지도 보기 */
+.apt-map {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    display: inline-flex;
+    align-self: flex-start;
+}
+.apt-map-view {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 40%;
+    align-self: flex-start;
+    z-index: -1;
+}
+.apt-map-view img {
+    position: absolute;
+}
+.apt-map-view > div > img {
+    opacity: 0;
+}
+.apt-map-view > div > img.acitve {
+    opacity: 1;
+}
+.apt-map-board {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 60%;
+}
+.apt-map-box  {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    padding: 21px 12px;
+    position: relative;
+}
+.apt-map-box > button {
+    transition: .3s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #17457dc4;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between;
+    padding: 100px 50px;
+    opacity: 0;
+}
+.apt-map-box > button > span {
+    color: #fff;
+}
+.apt-map-box > button > span.apt-btn-detail {
+    border: 1px solid #fff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+.apt-map-box > button > span.apt-btn-title {
+    font-size: 21px;
+    font-weight: bold;
+}
+.apt-map-box:hover > button {
+    opacity: 1;
+}
+.map-img {
+    position: absolute;
+    width: 220px;
+    height: 120px;
+    overflow: hidden;
+    margin-bottom: 21px;
+    top: 21px;
+    right: 21px;
+}
+.map-img > img {
+    width: 100%;
+    height: 100%;
+}
+
+.map-img > img {
+    width: 100%;
+    height: 100%;
+}
+.apt-map-box > p {
+    margin: 12px 21px;
+    color: #17457d;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    align-items: center;
+}
+.apt-map-box > p > span {
+    border: 1px solid #17457d;
+    font-size: 12px;
+    padding: 3px 12px;
+    margin-right: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+.apt-map-box > h1 {
+    margin: 0 21px;
+    font-weight: 900;
+}
+.apt-map-sub {
+    padding: 21px;
+}
+.apt-map-sub > div {
+    display: flex;
+    flex-direction: row;
+    margin: 6px auto;
+}
+.apt-map-sub >div> span {
+    width: 30%;
+    font-size: 12px;
+    color: #383757;
+    font-weight: bold;
+}
+.apt-map-sub >div> p {
+    flex: 1;
+    font-size: 12px;
+    line-height: 1.4;
+}
 /* 서비스 */
 #main-service {
     padding: 200px 0;
@@ -44,7 +507,7 @@
     background-color: #efefef;
 }
 #main-service > section {
-    width: 1400px;
+    width: 85vw;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -56,7 +519,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    height: 500px;
     flex: 2;
 }
 @keyframes rotate {
@@ -86,13 +548,15 @@
     }
 }
 .service-card {
-    padding: 80px 40px;
-    height: 100%;
+    padding: 50px 40px;
+    min-height: 500px;
     background-color: #fff;
     margin: 0 12px;
     flex: 1;
     height: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transition: .3s;
     z-index: 0;
     overflow: hidden;
@@ -127,11 +591,11 @@
     transform: translateY(-15px);
     box-shadow: 20px 20px 54px 1px rgba(0, 0, 0, 0.2);
 }
-.service-card:nth-of-type(1) > img ,
-.service-card:nth-of-type(2) > img {
+.service-card:nth-of-type(1) >div> img ,
+.service-card:nth-of-type(2) >div> img {
     opacity: .5;
 }
-.service-card > h1 {
+.service-card > div > h1 {
     color: #050505;
     font-size: 24px;
     font-weight: 100;
@@ -139,10 +603,10 @@
     line-height: 1.4;
     margin-top: 30px;
 }
-.service-card > ul {
+/* .service-card > ul {
     position: absolute;
     top: 65%;
-}
+} */
 .service-card ul > li {
     margin: 12px 0;
     color: #050505;
@@ -197,7 +661,6 @@
     }
     100% {
         top: 50%;
-        /* transform: translate(-50, -50%); */
     }
 }
 .service-title > button:hover::before {
@@ -232,7 +695,7 @@
 
 /* 공지사항 */
 #main-notice {
-    width: 1400px;
+    width: 85vw;
     margin: 100px auto;
     overflow: hidden;
 }
@@ -349,6 +812,7 @@
     align-items: center;
     justify-content: center;
     transition: .3s;
+    margin-bottom: 150px;
 }
 #main-link article {
     width: 446px;

@@ -3,8 +3,9 @@ import URL from "../../context/URL";
 
 const Header = (props) => {
     const tab = props.tab;
+    const headerList = [URL.MENUTYPE_MAIN, URL.MENUTYPE_BI]
     return (
-        <header className={tab == URL.MENUTYPE_MAIN ? 'main-header' : ''}>
+        <header className={headerList.includes(tab) ? 'main-header' : ''}>
             <Link to={URL.MAIN } id="logo"></Link>
             <div id="menu-title">
                 <p>브랜드</p>

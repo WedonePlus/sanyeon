@@ -25,6 +25,22 @@ button {
     background: none;
     cursor: pointer;
 }
+.blue-btn {
+    border: 1px solid #1a2f49 !important;
+    color: #fff !important;
+    background-color: #1a2f49 !important;
+}
+input {
+    border: 1px solid rgba(255, 255, 255, 0);
+    color: #999;
+}
+input::placeholder {
+    color: #999;
+}
+input:focus {
+    outline: none;
+}
+
 
 /* header */
 header {
@@ -122,7 +138,7 @@ header:has(#menu-tab>ul:hover) .call {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: unset;
     background-color: rgba(255, 255, 255, 0);
     display: flex;
     flex-direction: row;
@@ -130,17 +146,21 @@ header:has(#menu-tab>ul:hover) .call {
     padding-bottom: 80px;
     visibility: hidden;
     opacity: 0;
-    transition: .5s ease;
+    transition: 1s ease-out;
     padding-top: 120px;
     z-index: -1;
     overflow: hidden;
+}
+#menu-tab > ul {
+    transition: .8s ease-out;
+    transform: translateY(-30%);
 }
 .menu-back {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 50%;
     background-color: #fff;
     transition: 1s ease-out;
     z-index: -3;
@@ -174,8 +194,13 @@ header:has(#menu-tab>ul:hover) .call {
 header:has(#menu-title:hover) #menu-tab,
 #menu-tab:has(ul:hover ){
     visibility: visible;
-    opacity: 1;
+    opacity: 1;height: auto;
 }
+header:has(#menu-title:hover) #menu-tab > ul,
+#menu-tab:has(ul:hover ) > ul{
+    transform: translateY(0);
+}
+
 header:has(#menu-title:hover) nav > .menu-back,
 #menu-tab:has(ul:hover) .menu-back {
     height: 100%;
@@ -187,16 +212,43 @@ header:has(#menu-tab>ul:hover) > .menu-back-black{
     opacity: .5;
 }
 
+/* 메인 내용 */
+main {
+    width: 80vw;
+    padding: 150px 0;
+    margin: 0 auto;
+}
+main > h1 {
+    color: #333;
+    font-size: 75px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin: 50px 0;
+}
+main > address {
+    font-style: unset;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #757575;
+    margin: 20px 10px;
+    margin-bottom: 100px;
+}
+main > address > span {
+    border-top: 1px solid #757575;
+    display: inline-block;
+    width: 5px;
+    margin: 0 15px;
+}
 
 /* footer */
 footer {
     width: 100%;
-    margin-top: 150px;
     padding: 30px 20px;
     background-color: #0d233e;
 }
 footer > section {
-    width: 1100px;
+    width: 70vw;
     margin: 0 auto;
 }
 #footer-top {
@@ -267,4 +319,63 @@ footer > section {
 #footer-bottom p {
     color: rgba(255, 255, 255, .33);
     font-size: 14px;
+}
+
+/* non page */
+#non-page {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.transition-btn {
+    border: 1px solid #17457d;
+    padding: 6px 21px;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+@keyframes service-btn-1 {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes service-btn-2 {
+    0% {
+        top: 200%;
+    }
+    
+    70% {
+        top: 200%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+button.transition-btn:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #17457d;
+    width: 100%;
+    height: 100%;
+    animation: service-btn-1 .2s ease-out;
+}
+button.transition-btn:hover::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    word-break: keep-all;
+    word-wrap: unset;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    animation: service-btn-2 .4s ease-out;
 }
