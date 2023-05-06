@@ -7,6 +7,9 @@ import Null from "../views/Null";
 import SaleAgent from "../views/work/SaleAgent";
 import Marketing from "../views/work/Marketing";
 import Consulting from "../views/work/Consulting";
+import AptInfo from "../views/aptInfo/AptInfo";
+import Notice from '../views/customerService/Notice'
+import NoticeDetail from "../views/customerService/NoticeDetail";
 
 function Tab(props) {
     const tab = props.tab;
@@ -41,6 +44,19 @@ function Tab(props) {
     if(tab == URL.MENUTYPE_CONSULTING){
         return <Consulting/>
     }    
+
+    // 산업단지정보
+    if(tab == URL.MENUTYPE_APTINFO) {
+        return <AptInfo/>
+    }
+
+    // 고객센터
+    if(tab == URL.MENUTYPE_NOTICE) {
+        return <Notice/>
+    }
+    if(tab == URL.MENUTYPE_NOTICE_DETAIL) {
+        return <NoticeDetail/>
+    }
 
     // 빈 페이지
     return <Null/>

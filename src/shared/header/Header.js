@@ -31,7 +31,7 @@ const Header = (props) => {
                     <li><Link to={URL.WORK_CONSULTING}>컨설팅</Link></li>
                 </ul>
                 <ul>
-                    <li><Link to={URL.APT_INFO}>산업단지정보</Link></li>
+                    <li><Link to={URL.APT_INFO}>분양단지</Link></li>
                 </ul>
                 <ul>
                     <li><Link to={URL.SERVICE_NOTICE}>공지사항</Link></li>

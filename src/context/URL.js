@@ -14,6 +14,7 @@ const URL = {
     APT_INFO            : '/apt-info',
 
     SERVICE_NOTICE      : '/service/notice',
+    SERVICE_NOTICE_DETAIL      : '/service/notice/:id',
     SERVICE_CUSTOMER    : '/service/customer',
     SERVICE_WAY         : '/service/way',
 
@@ -30,8 +31,9 @@ const URL = {
     MENUTYPE_CONSULTING : 'consulting',
 
     MENUTYPE_APTINFO    : 'aptInfo',
-    
+
     MENUTYPE_NOTICE     : 'notice',
+    MENUTYPE_NOTICE_DETAIL     : 'noticeDetail',
     MENUTYPE_CUSTOMER   : 'customerService',
     MENUTYPE_WAY        : 'wayToCome'
 }

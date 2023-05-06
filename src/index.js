@@ -4,6 +4,8 @@ import './css/index.css';
 import './css/main.css'
 import './css/brand.css'
 import './css/work.css'
+import './css/aptInfo.css'
+import './css/customerService.css'
 import reportWebVitals from './reportWebVitals';
 import Root from './client/Root';
 

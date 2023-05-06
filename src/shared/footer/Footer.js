@@ -29,7 +29,7 @@ const Footer = () => {
                     <div>
                         <h1>산업단지정보</h1>
                         <ul>
-                            <li><Link to={URL.APT_INFO}>산업단지정보</Link></li>
+                            <li><Link to={URL.APT_INFO}>분양단지</Link></li>
                         </ul>
                     </div>
                     <div>

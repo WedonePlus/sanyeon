@@ -19,6 +19,7 @@ const Root = () => (
             <Route path={URL.APT_INFO} element={<App tab={URL.MENUTYPE_APTINFO}></App>}></Route>
 
             <Route path={URL.SERVICE_NOTICE} element={<App tab={URL.MENUTYPE_NOTICE}></App>}></Route>
+            <Route path={URL.SERVICE_NOTICE_DETAIL} element={<App tab={URL.MENUTYPE_NOTICE_DETAIL}></App>}></Route>
             <Route path={URL.SERVICE_CUSTOMER} element={<App tab={URL.MENUTYPE_CUSTOMER}></App>}></Route>
             <Route path={URL.SERVICE_WAY} element={<App tab={URL.MENUTYPE_WAY}></App>}></Route>
         </Routes>

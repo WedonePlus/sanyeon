@@ -1,0 +1,90 @@
+#notice > .search-word{
+    float: right;
+}
+.notice-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.notice-list > div {
+    width: 31%;
+    border: 1px solid #ddd;
+    padding: 50px;
+    margin: 21px 1%;
+    cursor: pointer;
+    transition: .3s;
+}
+.notice-list > div > h1 {
+    font-size: 24px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    word-break: keep-all;
+    font-weight: 900;
+    margin-bottom: 32px;
+}
+.notice-list > div > p {
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 86px;
+    line-height: 1.7;
+}
+.notice-list > div:hover {
+    border-color: #17457d;
+    box-shadow:0px 10px 20px 1px rgba(0, 0, 0, 0.2);
+}
+/* 공지사항 자세히보기 */
+#notice-detail {
+    width: 100%;
+    margin: 30px auto;
+}
+.notice-title {
+    border-bottom: 1px solid #333;
+    padding-bottom: 100px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.notice-title > h1 {
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    width: 90%;
+}
+.notice-title > p  {
+    color: #666;
+    font-weight: 300;
+    font-size: 16px;
+}
+.notice-title > button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.notice-content {
+    padding: 50px 0;
+    border-bottom: 1px solid #ddd;
+}
+.notice-content > pre {
+    display: block;
+    width: 100%;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666;
+}
+#notice-detail > button {
+    display: block;
+    margin: 50px auto;
+    width: 350px;
+    font-size: 24px;
+    padding: 24px;
+    font-weight: 100;
+}
+#notice-detail > button:hover::after {
+    content:  '목록으로';
+}
