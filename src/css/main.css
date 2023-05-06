@@ -387,16 +387,24 @@
     padding: 20px;
     width: 40%;
     align-self: flex-start;
-    z-index: -1;
+    z-index: 0;
+    height: 100vh;
+    height: max-content;
 }
 .apt-map-view img {
     position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 .apt-map-view > div > img {
     opacity: 0;
 }
 .apt-map-view > div > img.acitve {
     opacity: 1;
+}
+area {
+    cursor: pointer;
 }
 .apt-map-board {
     display: inline-flex;

@@ -12,7 +12,7 @@ const Main =()=> {
     // 분양단지 검색
     const [searchWord, setSearchWord] = useState(''); // 검색 조건 : 산업단지명 / 지역
     const [filterSwitch, setFilterSwitch] = useState(CODE.FLAG_NO); // 상세검색 펼치기 switch
-    const [aptType, setAptType] = useState(CODE.APT_TYPE_BOARD); // 지도 보기 or 목록 보기
+    const [aptType, setAptType] = useState(CODE.APT_TYPE_MAP); // 지도 보기 or 목록 보기
     const [aptArea, setAptArea] = useState([]); // 선택한 지역 리스트
     const [aptMore, setAptMore] = useState(CODE.FLAG_NO);
     const [searchSection, setSearchSection] = useState([]);
@@ -33,6 +33,7 @@ const Main =()=> {
 
 
     const changeAptArea = (areaValue) => {
+        console.log(areaValue)
         if(aptArea.includes(areaValue)) {
             let arr = aptArea.filter((element) => element !== areaValue);
             setAptArea(arr)
@@ -187,7 +188,8 @@ const Main =()=> {
                             tmpBaord.map((x, idx)=>{
                                 if(aptMore == CODE.FLAG_NO && idx > 2) {return null;}
                                 if(aptMore == CODE.FLAG_YES && idx > 5) {return null;}
-                                return <div className="apt-gallery-box">
+                                return <Fragment key={'gallery'+idx}>
+                                    <div className="apt-gallery-box">
                                     <div className="gallery-img"><ImgFetch imgSource={'condo'}/></div>
                                     <p><span>{x.status}</span>{x.location}</p>
                                     <h1>{x.name}</h1>
@@ -215,12 +217,13 @@ const Main =()=> {
                                         <div>
                                             <span>입주가능 업종</span>
                                             <p>
-                                                {x.secotrs.map(s=><>({s.sectorId}){s.sectorName}</>)}
+                                                {x.secotrs.map(s=><Fragment key={s.sectorId}>({s.sectorId}){s.sectorName}</Fragment>)}
                                             </p>
                                         </div>
                                     </div>
                                     <button><span className="apt-btn-title">{x.name}</span><span className="apt-btn-detail">상세보기 &gt;</span></button>
                                 </div>
+                                </Fragment>
                                 
                             })
                         }
@@ -234,21 +237,22 @@ const Main =()=> {
                             {/* <ImgFetch imgSource={'map/all'}/> */}
                             
                             <img src={require('../../img/map/all.png')} useMap="#image-map"></img>
+                            
                             <div>
-                                <img  style={aptArea.includes(CODE.AREA_SEOUL) ? {'opacity' : '1'} : {opacity : '0'}} id="seoul" src={require('../../img/map/seoul.png')} useMap="#image-map"></img>
+                                <img style={aptArea.includes(CODE.AREA_SEOUL) ? {'opacity' : '1'} : {opacity : '0'}} id="seoul" src={require('../../img/map/seoul.png')} useMap="#image-map"></img>
                                 <img style={aptArea.includes(CODE.AREA_GANGWON) ? {'opacity' : '1'} : {opacity : '0'}} id='gangwon' src={require('../../img/map/gangwon.png')} useMap="#image-map"></img>
-                                <img  style={aptArea.includes(CODE.AREA_CHUNGCHEONG) ? {'opacity' : '1'} : {opacity : '0'}} id='chungcheong' src={require('../../img/map/chungcheong.png')} useMap="#image-map"></img>
+                                <img style={aptArea.includes(CODE.AREA_CHUNGCHEONG) ? {'opacity' : '1'} : {opacity : '0'}} id='chungcheong' src={require('../../img/map/chungcheong.png')} useMap="#image-map"></img>
                                 <img style={aptArea.includes(CODE.AREA_GYEONGSANG) ? {'opacity' : '1'} : {opacity : '0'}} id='gyeongsang' src={require('../../img/map/gyeongsang.png')} useMap="#image-map"></img>
                                 <img style={aptArea.includes(CODE.AREA_JEOLLA) ? {'opacity' : '1'} : {opacity : '0'}} id='jeolla' src={require('../../img/map/jeolla.png')} useMap="#image-map"></img>
                                 <img style={aptArea.includes(CODE.AREA_JEJU) ? {'opacity' : '1'} : {opacity : '0'}}  id='jeju' src={require('../../img/map/jeju.png')} useMap="#image-map"></img>
                             </div>
-                            <map name="image-map">
-                                <area target="" alt="image-map" title="image-map" href="javascript:" onClick={()=>{changeAptArea(CODE.AREA_SEOUL)}} coords="51,76,74,69,84,73,95,70,101,61,116,47,117,32,130,25,143,37,150,41,166,58,163,79,164,96,178,102,183,107,187,116,187,136,184,150,174,162,164,173,157,175,153,179,144,179,126,183,108,167,99,169,91,162,79,154,87,145,99,145,105,128,97,128,99,117,69,113,55,103,47,87,45,83" shape="poly" />
-                                <area target="" alt="image-map" title="image-map" href="javascript:"  onClick={()=>{changeAptArea(CODE.AREA_GANGWON)}} coords="143,20,156,20,174,13,193,19,217,21,256,7,268,19,274,49,303,91,319,116,322,121,326,132,337,143,340,154,322,159,290,162,259,159,230,147,221,147,208,154,192,145,200,107,176,91,175,71,185,55,178,56" shape="poly" />
-                                <area target="" alt="image-map" title="image-map" href="javascript:"  onClick={()=>{changeAptArea(CODE.AREA_CHUNGCHEONG)}} coords="64,182,84,183,107,191,124,191,143,190,153,190,192,175,222,161,240,157,260,167,254,181,237,189,215,201,207,219,201,233,201,245,204,261,215,271,212,288,204,295,188,289,178,291,172,297,154,290,153,278,144,285,134,285,129,274,118,276,103,287,99,302,89,283,62,216,52,206,52,195,52,205,53,186" shape="poly" />
-                                <area target="" alt="image-map" title="image-map" href="javascript:" onClick={()=>{changeAptArea(CODE.AREA_GYEONGSANG)}} coords="275,169,342,162,350,198,356,292,365,288,354,350,314,404,302,404,278,392,269,402,267,410,283,410,285,423,280,434,270,441,260,440,246,432,230,419,223,430,219,437,204,437,190,408,188,392,180,385,183,356,183,341,208,312,208,296,223,290,222,267,210,255,212,241,212,222,237,191,247,196,259,196,260,180,270,173" shape="poly" />
-                                <area target="" alt="image-map" title="image-map" href="javascript:" onClick={()=>{changeAptArea(CODE.AREA_JEOLLA)}} coords="102,311,112,298,118,287,125,300,140,300,150,293,156,306,174,306,190,298,200,303,200,314,187,322,182,336,175,345,175,364,178,392,181,400,192,432,195,451,193,456,196,468,200,473,200,483,185,462,173,444,164,442,172,458,168,464,162,471,152,478,130,481,141,460,143,451,131,457,122,470,119,484,119,492,100,492,82,492,71,468,66,474,64,483,40,478,55,451,47,449,33,449,25,449,19,438,32,435,57,437,56,415,63,406,45,405,35,402,47,396,64,371,71,371,91,346,73,348,100,325,96,310" shape="poly" />
-                                <area target="" alt="image-map" title="image-map" href="javascript:" onClick={()=>{changeAptArea(CODE.AREA_JEJU)}} coords="81,527,102,514,110,516,122,521,122,537,108,545,78,551,68,545,64,531" shape="poly" />
+                            <map name="image-map" id='image-map'>
+                                <area target="" alt={CODE.AREA_SEOUL} onClick={()=>{changeAptArea(CODE.AREA_SEOUL); return false;}} coords="51,76,74,69,84,73,95,70,101,61,116,47,117,32,130,25,143,37,150,41,166,58,163,79,164,96,178,102,183,107,187,116,187,136,184,150,174,162,164,173,157,175,153,179,144,179,126,183,108,167,99,169,91,162,79,154,87,145,99,145,105,128,97,128,99,117,69,113,55,103,47,87,45,83" shape="poly" />
+                                <area target="" alt={CODE.AREA_GANGWON}  onClick={()=>{changeAptArea(CODE.AREA_GANGWON); return false;}} coords="143,20,156,20,174,13,193,19,217,21,256,7,268,19,274,49,303,91,319,116,322,121,326,132,337,143,340,154,322,159,290,162,259,159,230,147,221,147,208,154,192,145,200,107,176,91,175,71,185,55,178,56" shape="poly" />
+                                <area target="" alt={CODE.AREA_CHUNGCHEONG}  onClick={()=>{changeAptArea(CODE.AREA_CHUNGCHEONG); return false;}} coords="64,182,84,183,107,191,124,191,143,190,153,190,192,175,222,161,240,157,260,167,254,181,237,189,215,201,207,219,201,233,201,245,204,261,215,271,212,288,204,295,188,289,178,291,172,297,154,290,153,278,144,285,134,285,129,274,118,276,103,287,99,302,89,283,62,216,52,206,52,195,52,205,53,186" shape="poly" />
+                                <area target="" alt={CODE.AREA_GYEONGSANG} onClick={()=>{changeAptArea(CODE.AREA_GYEONGSANG); return false;}} coords="275,169,342,162,350,198,356,292,365,288,354,350,314,404,302,404,278,392,269,402,267,410,283,410,285,423,280,434,270,441,260,440,246,432,230,419,223,430,219,437,204,437,190,408,188,392,180,385,183,356,183,341,208,312,208,296,223,290,222,267,210,255,212,241,212,222,237,191,247,196,259,196,260,180,270,173" shape="poly" />
+                                <area target="" alt={CODE.AREA_JEOLLA} onClick={()=>{changeAptArea(CODE.AREA_JEOLLA); return false;}} coords="97,312,105,308,117,288,125,294,137,299,145,294,157,298,163,300,177,307,190,299,200,304,200,318,190,318,181,335,173,349,176,370,176,391,175,406,188,417,195,438,187,448,199,462,202,472,178,458,177,440,173,432,165,432,165,442,171,452,172,460,166,468,174,474,162,475,149,477,143,477,130,482,133,474,146,456,133,452,122,462,117,474,116,484,115,489,99,489,82,489,67,467,63,477,48,484,39,472,54,464,56,450,41,442,18,439,31,432,50,432,67,439,57,428,56,414,56,402,46,402,43,406,40,392,55,392,61,392,67,385,65,366,71,353,76,345,74,333" shape="poly"/>
+                                <area target="" alt={CODE.AREA_JEJU} onClick={()=>{changeAptArea(CODE.AREA_JEJU); return false;}} coords="84,515,94,511,103,511,112,511,126,523,126,535,114,545,96,545,82,549,76,552,65,544,64,536,77,532,81,524"  shape="poly" />
                             </map>
 
                         </div>
@@ -257,7 +261,8 @@ const Main =()=> {
                             tmpBaord.map((x, idx)=>{
                                 if(aptMore == CODE.FLAG_NO && idx > 1) {return null;}
                                 if(aptMore == CODE.FLAG_YES && idx > 3) {return null;}
-                                return <div className="apt-map-box">
+                                return <Fragment key={'map'+idx}>
+                                    <div className="apt-map-box">
                                     <div className="map-img"><ImgFetch imgSource={'condo'}/></div>
                                     <p><span>{x.status}</span>{x.location}</p>
                                     <h1>{x.name}</h1>
@@ -285,12 +290,13 @@ const Main =()=> {
                                         <div>
                                             <span>입주가능 업종</span>
                                             <p>
-                                                {x.secotrs.map(s=><>({s.sectorId}){s.sectorName}</>)}
+                                                {x.secotrs.map(s=><Fragment key={s.sectorId}>({s.sectorId}){s.sectorName}</Fragment>)}
                                             </p>
                                         </div>
                                     </div>
                                     <button><span className="apt-btn-title">{x.name}</span><span className="apt-btn-detail">상세보기 &gt;</span></button>
                                 </div>
+                                </Fragment>
                                 
                             })
                         }
