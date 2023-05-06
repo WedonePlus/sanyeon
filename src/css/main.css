@@ -379,25 +379,26 @@
     margin: 30px auto;
     display: inline-flex;
     align-self: flex-start;
+    position: relative;
 }
 .apt-map-view {
     position: sticky;
     top: 0;
     left: 0;
-    padding: 20px;
     width: 40%;
     align-self: flex-start;
-    z-index: 0;
-    height: 100vh;
-    height: max-content;
 }
 .apt-map-view img {
-    position: absolute;
+    position: relative;
     width: 100%;
     top: 0;
     left: 0;
 }
 .apt-map-view > div > img {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
     opacity: 0;
 }
 .apt-map-view > div > img.acitve {
@@ -513,6 +514,7 @@ area {
     padding: 200px 0;
     width: 100%;
     background-color: #efefef;
+    z-index: 3;
 }
 #main-service > section {
     width: 85vw;
