@@ -3,7 +3,7 @@ import URL from "../../context/URL";
 
 const Header = (props) => {
     const tab = props.tab;
-    const headerList = [URL.MENUTYPE_MAIN, URL.MENUTYPE_BI]
+    const headerList = [URL.MENUTYPE_MAIN, URL.MENUTYPE_BI, URL.MENUTYPE_BRANDINFO]
     return (
         <header className={headerList.includes(tab) ? 'main-header' : ''}>
             <Link to={URL.MAIN } id="logo"></Link>
