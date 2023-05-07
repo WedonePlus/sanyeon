@@ -70,12 +70,12 @@ const CustomerService = () => {
 
                         <div>
                             <h1>내용  <span className="require">＊</span></h1>
-                            <textarea placeholder=" ▷ 기존 공장 소재지 :
-                                                ▷ 업종 :
-                                                ▷ 희망 면적 :
-                                                ▷ 찾으시는 지역 :
-                                                ▷ 입주시기 :
-                                                ▷ 예산 :
+                            <textarea placeholder=" ▷ 기존 공장 소재지 : &#13;&#10;
+                                                ▷ 업종 :&#13;&#10;
+                                                ▷ 희망 면적 :&#13;&#10;
+                                                ▷ 찾으시는 지역 :&#13;&#10;
+                                                ▷ 입주시기 :&#13;&#10;
+                                                ▷ 예산 :&#13;&#10;
                                                 ▷ 기타문의사항 :"/>
                         </div>
                     </div>
