@@ -61,7 +61,8 @@ const SaleAgent = () => {
                                 </div>
                             </div>
                         </article>
-
+                        <section>
+                            
                         <article className="work-step">
                             <div>
                                 <div className="step-title">
@@ -142,6 +143,7 @@ const SaleAgent = () => {
                                 </div>
                             </div>
                         </article>
+                        </section>
                         
                     </>
                 }

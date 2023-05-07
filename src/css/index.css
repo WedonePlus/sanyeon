@@ -37,7 +37,8 @@ input {
 input::placeholder {
     color: #999;
 }
-input:focus {
+input:focus,
+textarea:focus {
     outline: none;
 }
 

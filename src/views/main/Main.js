@@ -75,9 +75,9 @@ const Main =()=> {
     }
 
     // 실제 링크들
-    const goYoutube = ()=>{window.location.href='https://www.youtube.com/'}
-    const goKakao = ()=> {window.location.href='https://www.kakaocorp.com/page/'}
-    const goBlog = () => {window.location.href = 'https://section.blog.naver.com/'}
+    const goYoutube = ()=>{window.location.href=URL.LINK_YOUTUBE}
+    const goKakao = ()=> {window.location.href=URL.LINK_KAKAO}
+    const goBlog = () => {window.location.href = URL.LINK_BLOG}
 
     useEffect(()=> {
         setAptMore(CODE.FLAG_NO)

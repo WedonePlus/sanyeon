@@ -88,3 +88,228 @@
 #notice-detail > button:hover::after {
     content:  '목록으로';
 }
+
+/* 고객문의 */
+#customer-service {
+    width: 100%;
+    height: auto;
+}
+#customer-service > p {
+    color: #333;
+    font-size: 38px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+#customer-service > article:not(.work-step) {
+    margin: 100px auto;
+}
+#customer-service > article > h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 50px;
+}
+#customer-service > article > p {
+    font-size: 15px;
+    color: #595858;
+    line-height: 1.7;
+    margin-bottom: 21px;
+}
+#customer-service > article > p.customer-txt-point {
+    color: #1e5394;
+}
+.customer-select > ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+.customer-select > ul > li {
+    width: 19%;
+    padding: 50px;
+    border: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.customer-select > ul > li > img {
+    width: 42px;
+    margin-bottom: 18px;
+}
+.customer-select > ul > li > span {
+    color: #363636;
+    font-weight: 500;
+    font-size: 18px;
+}
+.customer-select > ul > li.active {
+    background-color: #1a2f49;
+}
+.customer-select > ul > li.active > span {
+    color: #fff;
+}
+.customer-agree > button {
+    border: 1px solid #dbdbdb;
+    color: #363636;
+    padding: 12px 21px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+.customer-agree > button.active {
+    color: #1e5394;
+    border-color: #1e5394;
+}
+.customer-agree > span {
+    color: #1e5394;
+    font-size: 12px;
+    display: block;
+}
+
+.customer-banner {
+    width: 100%;
+    padding: 80px 10%;
+    background-image: url('../img/customer_banner.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+}
+.customer-banner > div {
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 50px;
+}
+.customer-banner > div:first-child:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: 1px;
+    border-right: 1px solid #fff;
+    height: 100%;
+}
+.customer-banner > div > h1  {
+    font-weight: 900;
+    font-size: 42px;
+    margin-bottom: 21px;
+}
+.customer-banner > div > h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.customer-banner > div > h3 {
+    font-size: 24px;
+    font-weight: 100;
+    margin-bottom: 21px;
+}
+.customer-banner > div > p {
+    margin-bottom: 12px;
+}
+.customer-banner > div > button {
+    padding: 16px 12px;
+    border-color: #fff;
+    background: none;
+    color: #fff;
+    margin-top: 60px;
+    font-size: 16px;
+    width: 270px;
+}
+.customer-banner > div > button:hover::before {
+    background-color: #fff;
+    border-color: #fff;
+}
+.customer-banner > div > button:hover::after {
+    color: #333;
+    content: '카카오톡으로 바로 문의하기';
+    width: 100%;
+}
+.customer-banner > div > ul {
+    border-left: 1px solid #fff;
+    padding: 4px 6px;
+    margin: 21px 0 ;
+}
+.customer-banner > div > ul > li {
+    margin: 6px 0;
+    padding: 2px 4px;
+    font-size: 13px;
+}
+.customer-banner > div > span {
+    font-size: 12px;
+    font-weight: 100;
+}
+.customer-banner > div > span > a {
+    color: #7fd0ff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.form-notice {
+    text-align: right;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 21px;
+}
+span.require {
+    display: inline-block;
+    color: #1e5394 !important;
+    margin:  0 4px;
+    font-size: 21px;
+}
+.form-tab {
+    padding: 50px 100px;
+    border-top: 2px solid #1a2f49;
+    border-bottom: 1px solid #dbdbdb;
+}
+.form-tab > div {
+    display: flex;
+    flex-direction: row;
+    margin: 21px 0;
+}
+.form-tab > div > h1 {
+    width: 20%;
+    color:#1a2f49;
+    font-size: 21px;
+}
+.form-tab > div > input {
+    width: 30%;
+    border: 1px solid #dbdbdb;
+    padding: 12px 21px;
+    color: #333;
+}
+.form-tab > div > textarea {
+    flex:1;
+    resize: none;
+    padding: 21px;
+    border: 1px solid #dbdbdb;
+    height: 250px;
+}
+.customer-form > button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 21px;
+    padding: 12px 54px;
+}
+.customer-form > button:hover::after {
+    content: '등록';
+}
+
+.step-detail > div > p > b {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 21px;
+}
+.step-detail > div > p > span {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+}

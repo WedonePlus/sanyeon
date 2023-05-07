@@ -35,7 +35,12 @@ const URL = {
     MENUTYPE_NOTICE     : 'notice',
     MENUTYPE_NOTICE_DETAIL     : 'noticeDetail',
     MENUTYPE_CUSTOMER   : 'customerService',
-    MENUTYPE_WAY        : 'wayToCome'
+    MENUTYPE_WAY        : 'wayToCome',
+
+    // LINK
+    LINK_KAKAO : 'https://www.kakaocorp.com/page/',
+    LINK_YOUTUBE : 'https://www.youtube.com/',
+    LINK_BLOG   : 'https://section.blog.naver.com/'
 }
 
 export default URL;

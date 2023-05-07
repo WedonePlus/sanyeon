@@ -10,6 +10,7 @@ import Consulting from "../views/work/Consulting";
 import AptInfo from "../views/aptInfo/AptInfo";
 import Notice from '../views/customerService/Notice'
 import NoticeDetail from "../views/customerService/NoticeDetail";
+import CustomerService from "../views/customerService/CustomerService";
 
 function Tab(props) {
     const tab = props.tab;
@@ -56,6 +57,9 @@ function Tab(props) {
     }
     if(tab == URL.MENUTYPE_NOTICE_DETAIL) {
         return <NoticeDetail/>
+    }
+    if(tab == URL.MENUTYPE_CUSTOMER) {
+        return <CustomerService/>
     }
 
     // 빈 페이지
