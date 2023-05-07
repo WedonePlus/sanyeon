@@ -16,7 +16,7 @@ const URL = {
     SERVICE_NOTICE      : '/service/notice',
     SERVICE_NOTICE_DETAIL      : '/service/notice/:id',
     SERVICE_CUSTOMER    : '/service/customer',
-    SERVICE_WAY         : '/service/way',
+    SERVICE_CONTACTUS         : '/service/contact',
 
     // MENU TYPE
     MENUTYPE_MAIN       : 'main',
@@ -35,7 +35,7 @@ const URL = {
     MENUTYPE_NOTICE     : 'notice',
     MENUTYPE_NOTICE_DETAIL     : 'noticeDetail',
     MENUTYPE_CUSTOMER   : 'customerService',
-    MENUTYPE_WAY        : 'wayToCome',
+    MENUTYPE_CONTACTUS        : 'contactUs',
 
     // LINK
     LINK_KAKAO : 'https://www.kakaocorp.com/page/',

@@ -21,7 +21,7 @@ const Root = () => (
             <Route path={URL.SERVICE_NOTICE} element={<App tab={URL.MENUTYPE_NOTICE}></App>}></Route>
             <Route path={URL.SERVICE_NOTICE_DETAIL} element={<App tab={URL.MENUTYPE_NOTICE_DETAIL}></App>}></Route>
             <Route path={URL.SERVICE_CUSTOMER} element={<App tab={URL.MENUTYPE_CUSTOMER}></App>}></Route>
-            <Route path={URL.SERVICE_WAY} element={<App tab={URL.MENUTYPE_WAY}></App>}></Route>
+            <Route path={URL.SERVICE_CONTACTUS} element={<App tab={URL.MENUTYPE_CONTACTUS}></App>}></Route>
         </Routes>
     </BrowserRouter>
 )

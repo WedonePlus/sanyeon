@@ -11,7 +11,7 @@ const Header = (props) => {
                 <p>브랜드</p>
                 <p>하는일</p>
                 <p>산업단지정보</p>
-                <p>고객센터</p>
+                <p>고객서비스</p>
             </div>
             <div className="call">
                 <div className="call-img"></div>
@@ -36,7 +36,7 @@ const Header = (props) => {
                 <ul>
                     <li><Link to={URL.SERVICE_NOTICE}>공지사항</Link></li>
                     <li><Link to={URL.SERVICE_CUSTOMER}>고객문의</Link></li>
-                    <li><Link to={URL.SERVICE_WAY}>오시는길</Link></li>
+                    <li><Link to={URL.SERVICE_CONTACTUS}>CONTACT US</Link></li>
                 </ul>
             </nav>
             <div className="menu-back-black"></div>

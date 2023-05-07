@@ -11,6 +11,7 @@ import AptInfo from "../views/aptInfo/AptInfo";
 import Notice from '../views/customerService/Notice'
 import NoticeDetail from "../views/customerService/NoticeDetail";
 import CustomerService from "../views/customerService/CustomerService";
+import ContactUs from "../views/customerService/ContactUs";
 
 function Tab(props) {
     const tab = props.tab;
@@ -60,6 +61,9 @@ function Tab(props) {
     }
     if(tab == URL.MENUTYPE_CUSTOMER) {
         return <CustomerService/>
+    }
+    if(tab == URL.MENUTYPE_CONTACTUS) {
+        return <ContactUs/>
     }
 
     // 빈 페이지

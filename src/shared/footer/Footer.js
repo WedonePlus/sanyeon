@@ -33,11 +33,11 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h1>고객센터</h1>
+                        <h1>고객서비스</h1>
                         <ul>
                             <li><Link to={URL.SERVICE_NOTICE}>공지사항</Link></li>
                             <li><Link to={URL.SERVICE_CUSTOMER}>고객문의</Link></li>
-                            <li><Link to={URL.SERVICE_WAY}>오시는길</Link></li>
+                            <li><Link to={URL.SERVICE_CONTACTUS}>CONTACT US</Link></li>
                         </ul>
                     </div>
                 </article>
