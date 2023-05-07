@@ -11,12 +11,14 @@ const Root = () => (
             <Route path={URL.BRAND_BI} element={<App tab={URL.MENUTYPE_BI}></App>}></Route>
             <Route path={URL.BRAND_CLIENT} element={<App tab={URL.MENUTYPE_CLIENT}></App>}></Route>
             <Route path={URL.BRAND_PORTFOLIO} element={<App tab={URL.MENUTYPE_PORTFOLIO}></App>}></Route>
+            <Route path={URL.BRAND_PORTFOLIO_DETAIL} element={<App tab={URL.MENUTYPE_PORTFOLIO_DETAIL}></App>}></Route>
 
             <Route path={URL.WORK_SALES_AGENT} element={<App tab={URL.MENUTYPE_SALESAGENT}></App>}></Route>
             <Route path={URL.WORK_MARKETING} element={<App tab={URL.MENUTYPE_MARKETING}></App>}></Route>
             <Route path={URL.WORK_CONSULTING} element={<App tab={URL.MENUTYPE_CONSULTING}></App>}></Route>
 
             <Route path={URL.APT_INFO} element={<App tab={URL.MENUTYPE_APTINFO}></App>}></Route>
+            <Route path={URL.APT_INFO_DETAIL} element={<App tab={URL.MENUTYPE_APTINFO_DETAIL}></App>}></Route>
 
             <Route path={URL.SERVICE_NOTICE} element={<App tab={URL.MENUTYPE_NOTICE}></App>}></Route>
             <Route path={URL.SERVICE_NOTICE_DETAIL} element={<App tab={URL.MENUTYPE_NOTICE_DETAIL}></App>}></Route>
@@ -26,3 +28,4 @@ const Root = () => (
     </BrowserRouter>
 )
 export default Root;
+

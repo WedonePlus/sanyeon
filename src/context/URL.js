@@ -6,12 +6,14 @@ const URL = {
     BRAND_BI            : '/brand/bi',
     BRAND_CLIENT        : '/brand/client',
     BRAND_PORTFOLIO     : '/brand/portfolio',
+    BRAND_PORTFOLIO_DETAIL : '/brand/portfolio/:id',
 
     WORK_SALES_AGENT    : '/work/sales-agent',
     WORK_MARKETING      : '/work/marketing',
     WORK_CONSULTING     : '/work/consulting',
     
     APT_INFO            : '/apt-info',
+    APT_INFO_DETAIL            : '/apt-info/:id',
 
     SERVICE_NOTICE      : '/service/notice',
     SERVICE_NOTICE_DETAIL      : '/service/notice/:id',
@@ -25,12 +27,14 @@ const URL = {
     MENUTYPE_BI         : 'BI',
     MENUTYPE_CLIENT     : 'client',
     MENUTYPE_PORTFOLIO  : 'portfolio',
+    MENUTYPE_PORTFOLIO_DETAIL  : 'portfolioDetail',
 
     MENUTYPE_SALESAGENT : 'salesAgent',
     MENUTYPE_MARKETING  : 'marketing',
     MENUTYPE_CONSULTING : 'consulting',
 
     MENUTYPE_APTINFO    : 'aptInfo',
+    MENUTYPE_APTINFO_DETAIL    : 'aptInfoDetail',
 
     MENUTYPE_NOTICE     : 'notice',
     MENUTYPE_NOTICE_DETAIL     : 'noticeDetail',

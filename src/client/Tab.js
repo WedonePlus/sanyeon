@@ -12,6 +12,7 @@ import Notice from '../views/customerService/Notice'
 import NoticeDetail from "../views/customerService/NoticeDetail";
 import CustomerService from "../views/customerService/CustomerService";
 import ContactUs from "../views/customerService/ContactUs";
+import Portfolio from "../views/brand/Portfolio";
 
 function Tab(props) {
     const tab = props.tab;
@@ -33,6 +34,12 @@ function Tab(props) {
     if(tab === URL.MENUTYPE_CLIENT) {
         return <Client/>
     }
+    if(tab === URL.MENUTYPE_PORTFOLIO) {
+        return <Portfolio/>
+    }
+    if(tab == URL.MENUTYPE_PORTFOLIO_DETAIL) {
+        return
+    }
 
     // 하는 일
     if(tab == URL.MENUTYPE_SALESAGENT) {
@@ -50,6 +57,10 @@ function Tab(props) {
     // 산업단지정보
     if(tab == URL.MENUTYPE_APTINFO) {
         return <AptInfo/>
+    }
+
+    if(tab == URL.MENUTYPE_APTINFO_DETAIL) {
+        return 
     }
 
     // 고객센터
