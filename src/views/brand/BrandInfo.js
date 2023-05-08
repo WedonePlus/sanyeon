@@ -14,14 +14,14 @@ const BrandInfo = () =>
             $html.animate({scrollTop:0},10);
             $(`.brand-info-visual > div`).eq(0).animate({opacity : 1}, 1000)
             $('.brand-info-sub > h1').animate({opacity :0,top:'80%'}, 3000)
-            $('.brand-txt').animate({opacity : 0}, 0)
+            // $('.brand-txt').animate({opacity : 0}, 1)
         })
         $('#brand-info > article').on("wheel", function(e){
 
             if($html.is(":animated")) return;
         
             if(e.originalEvent.deltaY > 0){
-                if(page == lastPage) return;
+                if(page > lastPage) return;
                 if(page == 1) {
                     $(`.brand-info-visual > div`).eq(1).animate({opacity : 1}, 1000)
                     $(`.brand-info-visual > div`).eq(0).animate({opacity : 0}, 500)
@@ -42,6 +42,10 @@ const BrandInfo = () =>
                 if(page==5) {
                     $('.brand-txt').eq(1).animate({opacity : 0}, 500)
                     $('.brand-txt').eq(2).animate({opacity : 1}, 2000)
+                }
+                if(page==6) {
+                    $('.brand-txt').eq(2).animate({opacity : 0}, 500)
+                    return;
                 }
                 
                 page++;

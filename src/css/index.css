@@ -247,6 +247,7 @@ footer {
     width: 100%;
     padding: 30px 20px;
     background-color: #0d233e;
+    z-index: 1;
 }
 footer > section {
     width: 70vw;
